@@ -2,7 +2,7 @@ SHELL=/bin/bash -eu -o pipefail
 
 
 requirements.txt:
-	echo "bio_embeddings[all]" > $@
+	echo "transformers[torch,sentencepiece,tokenizers,torch-speech,vision,integrations,timm,torch-vision,codecarbon,accelerate,video]" > $@
 
 .github/workflows/benchmark.yml: Makefile bin/build_workflow.sh templates/workflow_start.yml templates/workflow_tool.yml templates/workflow_end.yml
 	./bin/build_workflow.sh > $@
